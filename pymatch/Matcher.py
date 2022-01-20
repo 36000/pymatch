@@ -207,7 +207,7 @@ class Matcher:
             result.extend([test_scores.index[i]] + list(chosen))
             match_ids.extend([i] * (len(chosen)+1))
             if with_replacement==False:
-                ctrl_scores['scores'].iloc[list(chosen-len(test_scores))]=999
+                ctrl_scores['scores'].iloc[list(chosen-len(test_scores))]=999999999
         self.matched_data = self.data.loc[result]
         self.matched_data['match_id'] = match_ids
         self.matched_data['record_id'] = self.matched_data.index
